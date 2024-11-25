@@ -1,0 +1,43 @@
+@import url("bootstrap-5.0.2-dist/css/bootstrap.css");
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 20px 0;
+  background: url("testimonials-bg.jpg") no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+header ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+header ul li {
+  display: inline-flex;
+  margin-left: 10px;
+  color: aliceblue;
+}
+header .logo {
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+header .logo a {
+  color: #fff;
+}
+
+header .logo img {
+  max-height: 40px;
+}
+

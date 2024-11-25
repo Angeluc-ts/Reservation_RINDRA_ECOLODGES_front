@@ -1,0 +1,348 @@
+/* stat.css */
+
+header {
+  display: flex;
+  justify-content: space-between; /* Aligne les éléments du header de part et d'autre */
+  align-items: center;
+  padding: 10px;
+  background-color: #0d6efd; /* Couleur d'arrière-plan du header */
+}
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  margin-left: 20px; /* Espacement entre les éléments de la liste */
+}
+
+header .logo {
+  margin-right: 20px; /* Espacement à droite du logo */
+}
+
+.logo img {
+  height: 40px; /* Ajustez la taille du logo selon vos besoins */
+}
+
+h1, h2 {
+  color: #0073e6;
+  margin-bottom: 20px;
+}
+
+/* Conteneur principal en Flexbox */
+.statistics-page {
+  display: flex;
+  flex-direction: column; /* Colonne par défaut */
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .statistics-page {
+    flex-direction: row; /* Ligne pour les écrans plus larges */
+  }
+}
+
+/* Style de la barre de navigation */
+.statistics-page header {
+  width: 100%;
+}
+
+/* Conteneur des statistiques à gauche */
+.stats {
+  width: 100%; /* Prend toute la largeur sur petits écrans */
+  max-width: 220px; /* Limite la largeur sur grands écrans */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Espace en dessous sur petits écrans */
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 70px;
+  height: 655px;
+}
+
+@media (min-width: 768px) {
+  .stats {
+    margin-right: 20px; /* Espace entre stats et le contenu principal sur grands écrans */
+  }
+}
+
+/* Style pour les paragraphes des statistiques */
+.stats p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Conteneur principal qui prend le reste de l'espace */
+main {
+  flex-grow: 1;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Conteneur du graphique */
+.chart-container {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .charts-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Ajuste l'espacement entre les graphiques */
+  }
+
+  .chart-container {
+    flex: 2;
+    max-width: 33%;
+    height: 200px;
+  }
+
+  .chart-container1 {
+    flex: 1;
+    max-width: 100%;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    flex-direction: column; /* Colonne pour les petits écrans */
+  }
+
+  .chart-container {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .chart-container1 {
+    max-width: 100%;
+  }
+}
+
+/* Container pour la zone de défilement */
+.table-scroll-area {
+  max-height: 650px;
+  position: relative;
+  width: 1300px;
+}
+
+/* Styles pour le tableau */
+.table {
+  border-collapse: collapse;
+  position: relative;
+  width: 100%;
+}
+
+/* Styles pour l'en-tête du tableau */
+.table thead {
+  background-color: #0073e6;
+  color: #fff;
+  z-index: 2;
+  top: 0;
+  padding-top: 0;
+  height: 60px;
+}
+
+
+/* Styles pour les cellules de l'en-tête */
+.table th {
+  text-align: center;
+  padding: 12px 15px;
+  border-bottom: 2px solid #ddd;
+  background-color: #198754;
+  color: #fff;
+}
+
+/* Styles pour les cellules du corps du tableau */
+.table td {
+  text-align: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+
+/* Effet de survol des lignes de la table */
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Style des lignes paires */
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Couleur des cellules */
+.table td {
+  color: #333;
+}
+
+/* Style des lignes au survol */
+.table tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Styles pour le bouton de suppression */
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.desactive{
+  background-color: #198754;
+  cursor: not-allowed;
+}
+
+
+
+/* From Uiverse.io by zanina-yassine */ 
+.container {
+  width: 250px;
+  height: 250px;
+  margin-top: 200px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloud {
+  width: 250px;
+}
+
+.front {
+  padding-top: 45px;
+  margin-left: 25px;
+  display: inline;
+  position: absolute;
+  z-index: 11;
+  animation: clouds 8s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.back {
+  margin-top: -30px;
+  margin-left: 150px;
+  z-index: 12;
+  animation: clouds 12s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.right-front {
+  width: 45px;
+  height: 45px;
+  border-radius: 50% 50% 50% 0%;
+  background-color: #4c9beb;
+  display: inline-block;
+  margin-left: -25px;
+  z-index: 5;
+}
+
+.left-front {
+  width: 65px;
+  height: 65px;
+  border-radius: 50% 50% 0% 50%;
+  background-color: #4c9beb;
+  display: inline-block;
+  z-index: 5;
+}
+
+.right-back {
+  width: 50px;
+  height: 50px;
+  border-radius: 50% 50% 50% 0%;
+  background-color: #4c9beb;
+  display: inline-block;
+  margin-left: -20px;
+  z-index: 5;
+}
+
+.left-back {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 0% 50%;
+  background-color: #4c9beb;
+  display: inline-block;
+  z-index: 5;
+}
+
+.sun {
+  width: 120px;
+  height: 120px;
+  background: -webkit-linear-gradient(to right, #fcbb04, #fffc00);
+  background: linear-gradient(to right, #fcbb04, #fffc00);
+  border-radius: 60px;
+  display: inline;
+  position: absolute;
+}
+
+.sunshine {
+  animation: sunshines 2s infinite;
+}
+
+@keyframes sunshines {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes clouds {
+  0% {
+    transform: translateX(15px);
+  }
+
+  50% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(15px);
+  }
+}
+
+
+.statistics-page .main{
+  max-height: 650px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}

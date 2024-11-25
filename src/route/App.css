@@ -1,0 +1,342 @@
+@import url("bootstrap-5.0.2-dist/css/bootstrap.css");
+
+
+/* Styles pour le header fixe */
+header {
+  position: fixed; /* Fixe le header en haut */
+  top: 0; /* Positionne le header en haut de la page */
+  left: 0; /* Aligne le header avec le bord gauche */
+  width: 100%; /* Assure que le header prend toute la largeur de la page */
+  display: flex;
+  justify-content: space-between; /* Aligne les éléments du header de part et d'autre */
+  align-items: center;
+  padding: 10px;
+  background-color: #0d6efd; /* Couleur d'arrière-plan du header */
+  z-index: 1000; /* Assure que le header est au-dessus des autres éléments */
+}
+
+/* Styles pour les éléments de la liste dans le header */
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  margin-left: 20px; /* Espacement entre les éléments de la liste */
+}
+
+header nav ul li a {
+  color: white; /* Couleur du texte des liens */
+  text-decoration: none; /* Supprime le soulignement des liens */
+  font-size: 20px; /* Taille de la police pour les liens */
+  font-family: 'Times New Roman', Times, serif;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline; /* Ajoute un soulignement lors du survol des liens */
+}
+
+header .logo {
+  margin-right: 20px; /* Espacement à droite du logo */
+}
+
+/* Ajoute une marge supérieure au contenu principal pour compenser la hauteur du header */
+main {
+  margin-top: 50px; /* Ajustez cette valeur en fonction de la hauteur réelle du header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+
+section {
+  padding: 2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form h1 {
+  text-align: center;
+  font-weight: bolder;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  color: #0d6efd;
+}
+
+h1, h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.voyages-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.voyage {
+  margin: 20px;
+  width: calc(33.33% - 20px);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.voyage img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.voyage h3 {
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Styles du formulaire de réservation */
+#reservation-form {
+  width: 50%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input[type="number"], input[type="text"], input[type="email"], input[type="date"] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #0073e6;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  background-color: #0073e6;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+#resultat {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles de la notification */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: fadeInOut 4s ease-in-out;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.notification.error {
+  background-color: #e74c3c; /* Rouge pour les erreurs */
+}
+
+.notification.success {
+  background-color: #2ecc71; /* Vert pour les succès */
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  height: 5px;
+  background-color: white;
+  animation: fillProgress 4s linear forwards;
+}
+
+@keyframes fillProgress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+
+
+/* From Uiverse.io by zanina-yassine */ 
+.container {
+  width: 250px;
+  height: 250px;
+  margin-top: 200px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloud {
+  width: 250px;
+}
+
+.front {
+  padding-top: 45px;
+  margin-left: 25px;
+  display: inline;
+  position: absolute;
+  z-index: 11;
+  animation: clouds 8s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.back {
+  margin-top: -30px;
+  margin-left: 150px;
+  z-index: 12;
+  animation: clouds 12s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.right-front {
+  width: 45px;
+  height: 45px;
+  border-radius: 50% 50% 50% 0%;
+  background-color: #4c9beb;
+  display: inline-block;
+  margin-left: -25px;
+  z-index: 5;
+}
+
+.left-front {
+  width: 65px;
+  height: 65px;
+  border-radius: 50% 50% 0% 50%;
+  background-color: #4c9beb;
+  display: inline-block;
+  z-index: 5;
+}
+
+.right-back {
+  width: 50px;
+  height: 50px;
+  border-radius: 50% 50% 50% 0%;
+  background-color: #4c9beb;
+  display: inline-block;
+  margin-left: -20px;
+  z-index: 5;
+}
+
+.left-back {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 0% 50%;
+  background-color: #4c9beb;
+  display: inline-block;
+  z-index: 5;
+}
+
+.sun {
+  width: 120px;
+  height: 120px;
+  background: -webkit-linear-gradient(to right, #fcbb04, #fffc00);
+  background: linear-gradient(to right, #fcbb04, #fffc00);
+  border-radius: 60px;
+  display: inline;
+  position: absolute;
+}
+
+.sunshine {
+  animation: sunshines 2s infinite;
+}
+
+@keyframes sunshines {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes clouds {
+  0% {
+    transform: translateX(15px);
+  }
+
+  50% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(15px);
+  }
+}
